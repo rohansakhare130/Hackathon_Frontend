@@ -1,0 +1,45 @@
+.addcategory-container {
+    padding: 35px;
+}
+
+.addcategory-main-heder {
+    display: flex;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    /* 150% */
+    letter-spacing: 0.5px;
+    column-gap: 10px;
+    margin-bottom: 40px;
+}
+
+
+.addcategory-heder-icon {
+    height: 40px;
+    fill: var(--Light-Dark, #807964);
+}
+.addcategory-heder-icon:hover {
+    fill: var(--Light-Dark, #010101);
+}
+
+.addcategory-main-textfield {
+    display: flex;
+    column-gap: 40px;
+    
+}
+
+#addcategory-textinput {
+    width: 300px;
+
+}
+
+.boxAddCa-button-main {
+    display: flex;
+    column-gap: 30px;
+    justify-content: right;
+    margin-top: 50vh;
+}
+

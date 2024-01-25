@@ -1,0 +1,119 @@
+.prod-main {
+    display: flex;
+    justify-content: center;
+    column-gap: 21%;
+    padding: 24px;
+   padding-top: 45px;
+}
+
+.prod-main-bar {
+    text-decoration: none;
+    color: rgb(14, 14, 14);
+    text-align: center;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.prod-main-bars1 {
+    height: 22px;
+}
+
+.prod-butn1 {
+    background: #662671;
+    width: 150px;
+    font-size: 24px;
+}
+
+.prod-butn1:hover {
+    background: #af43c2;
+}
+
+/* main box*/
+
+.Prod-containers-box {
+    margin-top: 10px;
+}
+
+.Prod-mains-box {
+    display: flex;
+    justify-content:start;
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: #FFF8B7;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.Prod-text-main1 {
+    display: flex;
+    justify-content:space-evenly;
+    flex-basis: 250px;
+   
+}
+
+
+.Prod-text-pack, .Prod-text-category,.Prod-text-mrp, .Prod-text-img, .Prod-text-status{
+    flex-basis: 190px;
+}
+
+
+
+/*-------*/
+
+
+.Prod-mains-boxs1 {
+    display: flex;
+    justify-content:start;
+    color: #000;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: #F2F2F2;
+    padding: 15px;
+    margin-bottom: 30px;  
+    align-items: center;
+}
+
+.Prod-text-mains1{
+    display: flex;
+    justify-content:space-evenly;
+    flex-basis: 275px;
+}
+
+.Prod-text-packSize,.Prod-text-img-p1{
+    flex-basis: 190px;
+}
+
+
+.Prod-text-mrp-p1,.Prod-text-category-p1{
+    flex-basis: 178px;
+}
+
+.Prod-text-status-p1{
+    flex-basis: 100px;
+}
+
+.Prod-text-main1-icons{
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 120px;
+}
+
+.Prod-editicon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
+}
+
+.Prod-deleteicon:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
+}

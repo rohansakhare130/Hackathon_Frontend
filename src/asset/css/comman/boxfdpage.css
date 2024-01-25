@@ -1,0 +1,72 @@
+.boxFD-cont{
+    width: 650px;
+    height: 300px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 2px #616161;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+.boxFD-heder-main{
+    display: flex;
+    justify-content: center;
+    column-gap: 8px;
+    margin-top: 20px;
+}
+
+.boxFD-img-1{
+ height: 40px;
+}
+
+.boxFD-text1{
+    color: #020202;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    margin-top: 9px;
+}
+
+.boxFD-text3{
+    color: #686868;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    margin-top: -10px;
+}
+
+.boxFD-button-main{
+    display: flex;
+    column-gap: 50px;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+.boxFD-button2{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    color: #020202;
+    font-family: Inter;
+    font-size: 16.174px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25.878px;
+    border-radius: 10px;
+}
+
+.boxFD-button2:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease-out;
+}
+
+.bt2 {
+    background-color: #662671;
+    color: #ffffff;
+}

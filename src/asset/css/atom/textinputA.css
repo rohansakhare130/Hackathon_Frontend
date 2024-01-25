@@ -1,0 +1,22 @@
+.textinput-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+   
+}
+
+.textinput-text-heder {
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.form-control_text_input {
+    border: none !important;
+    border: 1px solid #646464 !important;
+    border-radius: 0 !important;
+    font-size: 22px;
+}
+

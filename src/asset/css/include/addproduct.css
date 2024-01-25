@@ -1,0 +1,48 @@
+.addproduct-container {
+    padding: 35px;
+}
+
+.addproduct-main-heder {
+    display: flex;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    column-gap: 10px;
+    margin-bottom: 40px;
+}
+
+
+.addproduct-heder-icon {
+    height: 40px;
+    fill: var(--Light-Dark, #807964);
+}
+.addproduct-heder-icon:hover {
+    fill: var(--Light-Dark, #010101);
+}
+
+
+.addproduct-main-textfield-Product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    
+}
+
+#addcategory-textinput {
+    width: 300px;
+  
+}
+
+
+.boxAddPr-button-main {
+    display: flex;
+    column-gap: 30px;
+    justify-content: right;
+    margin-top: 35vh;
+}
+
