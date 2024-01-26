@@ -11,35 +11,41 @@ import Prodimg2 from '../asset/images/productimg-3.png';
 import ProductItem from '../include/ProductItem';
 import Modal from 'react-modal';
 import Out1 from '../asset/images/out-img.png';
-import Screen from '../screen/Screen';
+
 const Products = () => {
     const navigate = useNavigate();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
-
+    const [selectedProductId, setSelectedProductId] = useState(null);
     const handleLogout = () => {
         navigate('/addproduct');
     };
-    
-  const handleDeleted = () => {
-    setIsDialogOpen(true);
-  };
 
-  const handleCloseDialog = () => {
-    setIsDialogOpen(false);
-  };
-
-  const handleConfirmDelete = () => {
-    handleCloseDialog();
-    // Perform the actual delete action here if needed
-  };
-
-    const products = [
+    const [products, setProducts] = useState([
         { id: 123, name: 'Amul Taaza', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg, status: 'Active' },
         { id: 124, name: 'Gokul Cow', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg1, status: 'Inactive' },
         { id: 125, name: 'Shimla Apple', packSize: '1 kg', category: 'Fruits', mrp: 'Rs 150', imgSrc: Prodimg2, status: 'Active' },
         { id: 126, name: 'Amul Taaza', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg, status: 'Active' },
         // Add more products as needed
-    ];
+    ]);
+
+
+    const handleDeleted = (productId) => {
+        setSelectedProductId(productId);
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsDialogOpen(false);
+    };
+
+    const handleConfirmDelete = () => {
+        const updatedProducts = products.filter((product) => product.id !== selectedProductId);
+        setProducts(updatedProducts);
+        handleCloseDialog();
+       
+      };
+
+
     return (
         <div className="prod-main-container">
             <div className="prod-main">
@@ -86,43 +92,43 @@ const Products = () => {
 
             <div className="Prod-containers-product-box">
 
-            {products.map(product => (
-                <ProductItem
-                    key={product.id}
-                    {...product}
-                    onDelete={handleDeleted}
-                />
-            ))}
+                {products.map(product => (
+                    <ProductItem
+                        key={product.id}
+                        {...product}
+                        onDelete={handleDeleted}
+                    />
+                ))}
             </div>
             <Modal
-            isOpen={isDialogOpen}
-            onRequestClose={handleCloseDialog}
-            contentLabel="Confirm Delete"
-            className="modal-main"
-          >
-              <div className="boxFD-cont">
-                <div className="boxFD-heder-main">
-                  <img src={Out1} className="boxFD-img-1" alt={"logo"} />
-                  <p className="boxFD-text1">Delete</p>
+                isOpen={isDialogOpen}
+                onRequestClose={handleCloseDialog}
+                contentLabel="Confirm Delete"
+                className="modal-main"
+            >
+                <div className="boxFD-cont">
+                    <div className="boxFD-heder-main">
+                        <img src={Out1} className="boxFD-img-1" alt={"logo"} />
+                        <p className="boxFD-text1">Delete</p>
+                    </div>
+                    <p className="boxFD-text3">Are you sure you want to delete?</p>
+
+                    <div className="boxFD-button-main">
+                        <ButtonA
+                            name="Cancel"
+                            className="boxFD-button2"
+                            onClick={handleCloseDialog}
+                        />
+                        <ButtonA
+                            name="Confirm"
+                            className="boxFD-button2 bt2"
+                            onClick={handleConfirmDelete}
+                        />
+                    </div>
                 </div>
-                <p className="boxFD-text3">Are you sure you want to delete?</p>
-    
-                <div className="boxFD-button-main">
-                  <ButtonA
-                    name="Cancel"
-                    className="boxFD-button2"
-                    onClick={handleCloseDialog}
-                  />
-                  <ButtonA
-                    name="Confirm"
-                    className="boxFD-button2 bt2"
-                    onClick={handleConfirmDelete}
-                  />
-                </div>
-              </div>
-           
-          </Modal>
-            
+
+            </Modal>
+
         </div>
     )
 }

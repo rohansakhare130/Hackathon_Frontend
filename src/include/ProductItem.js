@@ -3,7 +3,12 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
 
 const ProductItem = ({ id, name, packSize, category, mrp, imgSrc, status, onDelete }) => {
+
+    const handleDeleteClick = () => {
+        onDelete(id);
+      };
   return (
+    
     <div className="Prod-mains-boxs1">
             <div className="Prod-text-mains1">
                 <div>{id}</div>
@@ -18,7 +23,7 @@ const ProductItem = ({ id, name, packSize, category, mrp, imgSrc, status, onDele
             <div className="Prod-text-status-p1">{status}</div>
 
             <div className="Prod-text-main1-icons">
-                <RiDeleteBin6Line onClick={onDelete} className="Prod-deleteicon" />
+                <RiDeleteBin6Line onClick={handleDeleteClick} className="Prod-deleteicon" />
                 <FaRegEdit className="Prod-editicon" />
             </div>
         </div>
