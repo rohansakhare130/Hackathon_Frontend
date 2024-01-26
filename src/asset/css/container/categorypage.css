@@ -117,6 +117,9 @@
 .modal-main{
     display: flex;
     justify-content: center;
-    margin-top: 31vh;
-    margin-left: 350px; 
+    align-items: center;
+    margin-top: 15vh;
+    margin-left: 350px;
+    box-shadow: none;
+    height: 91vh;
 }
