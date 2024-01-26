@@ -2,6 +2,9 @@ import React from 'react'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaRegEdit } from "react-icons/fa";
 const CategoryItem = ({ id,name1,description,status1, Onclick1}) => {
+    const handleDeleteClick1 = () => {
+        Onclick1(id);
+      };
     return (
         <div className="category-mains-boxs1">
             <div className="category-text-mains1">
@@ -15,7 +18,7 @@ const CategoryItem = ({ id,name1,description,status1, Onclick1}) => {
 
             <div className="category-text-status-c1">{status1}</div>
             <div className="category-text-main1-icons">
-                <RiDeleteBin6Line onClick={Onclick1} className="Prod-deleteicon" />
+                <RiDeleteBin6Line onClick={handleDeleteClick1} className="Prod-deleteicon" />
                 <FaRegEdit className="Prod-editicon" />
             </div>
 

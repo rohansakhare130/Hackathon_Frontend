@@ -11,28 +11,34 @@ import Screen from '../screen/Screen';
 const Category = () => {
   const navigate = useNavigate();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedProductId, setSelectedProductId] = useState(null);
+
   const handleLogout = () => {
     navigate('/addcategory');
   };
 
-  const handleDeleted = () => {
-    setIsDialogOpen(true);
-  };
+  const [products, setProducts] = useState([
+    { id: 123, name1: 'Milk', description: 'Lorem Ipsum is simply dummy text', status1: 'Active' },
+    { id: 124, name1: 'Fruits', description: 'Lorem Ipsum is simply dummy text', status1: 'Inactive' },
+    // Add more products as needed
+]);
+
+const handleDeleted = (productId) => {
+  setSelectedProductId(productId);
+  setIsDialogOpen(true);
+};
 
   const handleCloseDialog = () => {
     setIsDialogOpen(false);
   };
 
   const handleConfirmDelete = () => {
+    const updatedProducts = products.filter((product) => product.id !== selectedProductId);
+    setProducts(updatedProducts);
     handleCloseDialog();
   };
 
-  const products = [
-    { id: 123, name1: 'Milk', description: 'Lorem Ipsum is simply dummy text', status1: 'Active' },
-    { id: 124, name1: 'Fruits', description: 'Lorem Ipsum is simply dummy text', status1: 'Inactive' },
-
-    // Add more products as needed
-  ];
+ 
 
   return (
     <div className="category-main-container">
