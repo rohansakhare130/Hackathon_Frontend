@@ -59,15 +59,15 @@
 .category-text-main1 {
     display: flex;
     justify-content:space-evenly;
-    flex-basis: 250px;
+    flex-basis: 14vw;
 }
 
 .category-text-description-d1{
-    flex-basis: 15vw;
+    flex-basis: 19vw;
 }
 
 .category-text-description{
-    flex-basis: 400px;
+    flex-basis: 26.5vw;
 }
 
 /*--box-*/
@@ -105,7 +105,7 @@
     flex-basis: 30vw;
 }
 .category-text-status-c1{
-    flex-basis: 10vw;
+    flex-basis: 7vw;
 }
 
 .category-text-main1-icons{
@@ -114,8 +114,9 @@
     justify-content:space-around;
 }
 
-
-
-
-
-
+.modal-main{
+    display: flex;
+    justify-content: center;
+    margin-top: 31vh;
+    margin-left: 350px; 
+}

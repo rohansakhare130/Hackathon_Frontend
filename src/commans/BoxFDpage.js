@@ -17,11 +17,12 @@ const BoxFDpage = (props) => {
                 <ButtonA
                     name="Cancel"
                     className="boxFD-button2"
-                    
+                    onClick={handlecancel}
                 />
                 <ButtonA
                     name="Confirm"
                     className="boxFD-button2 bt2"
+                    onClick={handleconfirm}
                   
                 />
             </div>

@@ -1,20 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../asset/css/container/categorypage.css";
 import { BiCategory, } from "react-icons/bi";
 import { useNavigate } from 'react-router-dom';
 import ButtonA from '../atoms/ButtonA';
-import SearchBar from '../include/Searchbar'
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { FaRegEdit } from "react-icons/fa";
+import SearchBar from '../include/Searchbar';
+import CategoryItem from '../include/CategoryItem';
+import Modal from 'react-modal';
+import Out1 from '../asset/images/out-img.png';
+import Screen from '../screen/Screen';
 const Category = () => {
   const navigate = useNavigate();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const handleLogout = () => {
     navigate('/addcategory');
   };
 
   const handleDeleted = () => {
-    navigate('/deleted');
+    setIsDialogOpen(true);
   };
+
+  const handleCloseDialog = () => {
+    setIsDialogOpen(false);
+  };
+
+  const handleConfirmDelete = () => {
+    handleCloseDialog();
+  };
+
+  const products = [
+    { id: 123, name1: 'Milk', description: 'Lorem Ipsum is simply dummy text', status1: 'Active' },
+    { id: 124, name1: 'Fruits', description: 'Lorem Ipsum is simply dummy text', status1: 'Inactive' },
+
+    // Add more products as needed
+  ];
 
   return (
     <div className="category-main-container">
@@ -54,64 +72,45 @@ const Category = () => {
 
       <div className="category-containers-product-box">
 
-        <div className="category-mains-boxs1">
-          <div className="category-text-mains1">
-            <div className="category-text-mains-heder">123</div>
-            <div>Milk</div>
-          </div>
-          <div className="category-text-description-d2" />
-          <div className="category-text-des-c1">
-            Lorem Ipsum is simply dummy
-          </div>
-
-          <div className="category-text-status-c1">Active</div>
-          <div className="category-text-main1-icons">
-            <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-            <FaRegEdit className="Prod-editicon" />
-          </div>
-
-
-        </div>
-
-        <div className="category-mains-boxs1">
-          <div className="category-text-mains1">
-            <div className="category-text-mains-heder">124</div>
-            <div>Fruits</div>
-          </div>
-          <div className="category-text-description-d2" />
-          <div className="category-text-des-c1">
-            Lorem Ipsum is simply dummy
-          </div>
-
-          <div className="category-text-status-c1">Active</div>
-          <div className="category-text-main1-icons">
-            <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-            <FaRegEdit className="Prod-editicon" />
-          </div>
-        </div>
-
-        <div className="category-mains-boxs1">
-          <div className="category-text-mains1">
-            <div className="category-text-mains-heder">123</div>
-            <div>Vegetables</div>
-          </div>
-          <div className="category-text-description-d2" />
-          <div className="category-text-des-c1">
-            Lorem Ipsum is simply dummy
-          </div>
-
-          <div className="category-text-status-c1">Active</div>
-          <div className="category-text-main1-icons">
-            <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-            <FaRegEdit className="Prod-editicon" />
-          </div>
-        </div>
-
-
-
-
+        {products.map(product => (
+          <CategoryItem
+            key={product.id}
+            {...product}
+            Onclick1={handleDeleted}
+          />
+        ))}
       </div>
 
+
+      <Modal
+        isOpen={isDialogOpen}
+        onRequestClose={handleCloseDialog}
+        contentLabel="Confirm Delete"
+        className="modal-main"
+      >
+      
+          <div className="boxFD-cont">
+            <div className="boxFD-heder-main">
+              <img src={Out1} className="boxFD-img-1" alt={"logo"} />
+              <p className="boxFD-text1">Delete</p>
+            </div>
+            <p className="boxFD-text3">Are you sure you want to delete?</p>
+
+            <div className="boxFD-button-main">
+              <ButtonA
+                name="Cancel"
+                className="boxFD-button2"
+                onClick={handleCloseDialog}
+              />
+              <ButtonA
+                name="Confirm"
+                className="boxFD-button2 bt2"
+                onClick={handleConfirmDelete}
+              />
+            </div>
+          </div>
+     
+      </Modal>
     </div>
   );
 };

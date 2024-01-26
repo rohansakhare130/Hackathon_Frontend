@@ -6,8 +6,6 @@ import ButtonA from '../atoms/ButtonA';
 import { useNavigate } from 'react-router-dom';
 const Deletepage = () => {
     const navigate = useNavigate(); // Use useNavigate hook
-
-    
     const handlecancel = () => {
       navigate('/product');
     };
@@ -32,7 +30,7 @@ const Deletepage = () => {
                     <ButtonA
                         name="Confirm"
                         className="boxFD-button2 bt2"
-                        onClick={handleconfirm}
+                         onClick={handleconfirm}
                     />
                 </div>
             </div>

@@ -10,6 +10,7 @@ import { FaRegEdit } from "react-icons/fa";
 import Prodimg from '../asset/images/productimg-1.png';
 import Prodimg1 from '../asset/images/productimg-2.png';
 import Prodimg2 from '../asset/images/productimg-3.png';
+import ProductItem from '../include/ProductItem';
 const Products = () => {
     const navigate = useNavigate();
     const handleLogout = () => {
@@ -18,6 +19,14 @@ const Products = () => {
     const handleDeleted = () => {
         navigate('/deleted');
     };
+
+    const products = [
+        { id: 123, name: 'Amul Taaza', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg, status: 'Active' },
+        { id: 124, name: 'Gokul Cow', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg1, status: 'Inactive' },
+        { id: 125, name: 'Shimla Apple', packSize: '1 kg', category: 'Fruits', mrp: 'Rs 150', imgSrc: Prodimg2, status: 'Active' },
+        { id: 126, name: 'Amul Taaza', packSize: '500 ml', category: 'Milk', mrp: 'Rs 27', imgSrc: Prodimg, status: 'Active' },
+        // Add more products as needed
+    ];
     return (
         <div className="prod-main-container">
             <div className="prod-main">
@@ -64,97 +73,16 @@ const Products = () => {
 
             <div className="Prod-containers-product-box">
 
-                <div className="Prod-mains-boxs1">
-                    <div className="Prod-text-mains1">
-                        <div>123</div>
-                        <div>Amul Taaza</div>
-                    </div>
-                    <div className="Prod-text-packSize">
-                        500 ml
-                    </div>
-                    <div className="Prod-text-category-p1">
-                        Milk
-                    </div>
-                    <div className="Prod-text-mrp-p1">
-                        Rs 27
-                    </div>
-                    <div className="Prod-text-img-p1">
-                        <img src={Prodimg} className="Prod-img-logo" alt={"logo"} />
-                    </div>
-                    <div className="Prod-text-status-p1">
-                        Active
-                    </div>
-
-                    <div className="Prod-text-main1-icons">
-                    <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-                    <FaRegEdit className="Prod-editicon" />
-                    </div>
-
-
-                </div>
-
-
-                <div className="Prod-mains-boxs1">
-                    <div className="Prod-text-mains1">
-                        <div>124</div>
-                        <div>Gokul Cow</div>
-                    </div>
-                    <div className="Prod-text-packSize">
-                        500 ml
-                    </div>
-                    <div className="Prod-text-category-p1">
-                        Milk
-                    </div>
-                    <div className="Prod-text-mrp-p1">
-                        Rs 27
-                    </div>
-                    <div className="Prod-text-img-p1">
-                        <img src={Prodimg1} className="Prod-img-logo" alt={"logo"} />
-                    </div>
-                    <div className="Prod-text-status-p1">
-                        Inactive
-                    </div>
-
-                    <div className="Prod-text-main1-icons">
-                    <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-                    <FaRegEdit className="Prod-editicon" />
-                    </div>
-
-
-                </div>
-
-                <div className="Prod-mains-boxs1">
-                    <div className="Prod-text-mains1">
-                        <div>124</div>
-                        <div>Shimla Apple</div>
-                    </div>
-                    <div className="Prod-text-packSize">
-                        1 kg
-                    </div>
-                    <div className="Prod-text-category-p1">
-                        Fruits
-                    </div>
-                    <div className="Prod-text-mrp-p1">
-                        Rs 150
-                    </div>
-                    <div className="Prod-text-img-p1">
-                        <img src={Prodimg2} className="Prod-img-logo" alt={"logo"} />
-                    </div>
-                    <div className="Prod-text-status-p1">
-                        Active
-                    </div>
-
-                    <div className="Prod-text-main1-icons">
-                    <RiDeleteBin6Line onClick={handleDeleted} className="Prod-deleteicon" />
-                    <FaRegEdit className="Prod-editicon" />
-                    </div>
-
-
-                </div>
-
-
+            {products.map(product => (
+                <ProductItem
+                    key={product.id}
+                    {...product}
+                    onDelete={handleDeleted}
+                />
+            ))}
             </div>
 
+            
         </div>
     )
 }
